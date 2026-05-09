@@ -1,0 +1,614 @@
+:root {
+  --paper: #f7f8f4;
+  --line: rgba(118, 129, 170, 0.24);
+  --ink: #191919;
+  --muted: #55565f;
+  --soft: #fdfdfb;
+  --card: rgba(255, 255, 255, 0.76);
+  --accent: #d73b3e;
+  --accent-soft: #ece7dd;
+  --shadow: 0 18px 36px rgba(33, 33, 44, 0.08);
+  --border: rgba(25, 25, 25, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Inter", sans-serif;
+  background-color: var(--paper);
+  background-image: linear-gradient(to bottom, transparent 0, transparent 36px, var(--line) 36px, var(--line) 39px);
+  background-size: 100% 78px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.page-shell {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.25rem 0 2.5rem;
+}
+
+.site-header,
+.site-footer,
+.site-nav,
+.hero-actions,
+.section-actions {
+  display: flex;
+  align-items: center;
+}
+
+.site-header,
+.site-footer {
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-header {
+  padding: 0.5rem 0 1.75rem;
+}
+
+.brand {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 0.92;
+}
+
+.brand-kicker {
+  font-family: "Gaegu", cursive;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.brand-title {
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(1.2rem, 2.8vw, 2rem);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.site-nav {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.site-nav a {
+  padding: 0.6rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a.is-active {
+  border-color: var(--ink);
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.hero,
+.storyteller-layout,
+.contact-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero {
+  padding: 2rem 0 3rem;
+}
+
+.hero-copy h1,
+.section-heading h2,
+.storyteller-copy h2,
+.contact-note h2 {
+  margin: 0;
+  font-family: "Archivo Black", sans-serif;
+  line-height: 0.96;
+  letter-spacing: 0.02em;
+}
+
+.hero-copy h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  text-transform: uppercase;
+  max-width: 8ch;
+}
+
+.compact-copy h1 {
+  max-width: none;
+  font-size: clamp(2.6rem, 7vw, 4.8rem);
+}
+
+.eyebrow {
+  margin: 0 0 0.65rem;
+  color: var(--accent);
+  font-family: "Gaegu", cursive;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.hero-text,
+.section-copy,
+.story-card-body p,
+.contact-note p,
+.site-footer,
+.form-note {
+  color: var(--muted);
+}
+
+.hero-text,
+.section-copy,
+.story-card-body p,
+.contact-note p,
+.storyteller-copy p {
+  line-height: 1.8;
+  font-size: 1.02rem;
+}
+
+.hero-actions,
+.section-actions {
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.82rem 1.3rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  background: var(--soft);
+  font-weight: 700;
+}
+
+.button-primary {
+  background: var(--ink);
+  color: #fff;
+}
+
+.button-secondary {
+  background: transparent;
+}
+
+.hero-visual,
+.storyteller-photo,
+.story-page-art,
+.contact-side {
+  position: relative;
+}
+
+.hero-visual {
+  min-height: 480px;
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(243, 240, 232, 0.92));
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: 1.25rem;
+  border: 1px dashed rgba(25, 25, 25, 0.12);
+  border-radius: 24px;
+}
+
+.hero-note,
+.hero-mark {
+  position: absolute;
+  z-index: 2;
+}
+
+.hero-note {
+  top: 1.25rem;
+  right: 1.25rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(25, 25, 25, 0.15);
+  font-family: "Gaegu", cursive;
+  font-weight: 700;
+}
+
+.hero-mark {
+  left: 2rem;
+  bottom: 1.75rem;
+  font-family: "Gaegu", cursive;
+  font-size: 2rem;
+  color: rgba(25, 25, 25, 0.55);
+}
+
+.abstract-composition {
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  bottom: 0;
+  top: 15%;
+  border-radius: 24px 24px 0 0;
+  background:
+    radial-gradient(circle at 70% 18%, rgba(255, 255, 255, 0.8), transparent 18%),
+    linear-gradient(180deg, rgba(249, 224, 215, 0.4) 0, rgba(255, 255, 255, 0.38) 42%, rgba(241, 219, 214, 0.75) 100%);
+}
+
+.abstract-composition::before {
+  content: "";
+  position: absolute;
+  width: 42%;
+  height: 38%;
+  left: 12%;
+  top: 16%;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.abstract-composition::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 12%;
+  width: min(250px, 68%);
+  height: 42%;
+  transform: translateX(-50%);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(206, 94, 82, 0.45), rgba(174, 74, 66, 0.9));
+}
+
+.abstract-hero::before {
+  box-shadow: 140px 42px 0 -22px rgba(255, 255, 255, 0.38);
+}
+
+.abstract-storyteller {
+  top: 8%;
+  left: 8%;
+  right: 8%;
+  border-radius: 22px;
+}
+
+.abstract-storyteller::before {
+  width: 56%;
+  height: 22%;
+  left: 10%;
+  top: 14%;
+  border-radius: 999px;
+  box-shadow: 0 110px 0 18px rgba(255, 255, 255, 0.34);
+}
+
+.abstract-storyteller::after {
+  width: min(280px, 76%);
+  height: 48%;
+  border-radius: 32px;
+  background: linear-gradient(180deg, rgba(212, 186, 164, 0.5), rgba(170, 153, 140, 0.86));
+}
+
+.section {
+  padding: 1.2rem 0 3rem;
+}
+
+.section-heading,
+.storyteller-copy {
+  max-width: 42rem;
+}
+
+.section-heading h2,
+.storyteller-copy h2,
+.contact-note h2 {
+  font-size: clamp(2rem, 4vw, 3.3rem);
+}
+
+.storyteller-layout,
+.contact-layout {
+  align-items: start;
+}
+
+.storyteller-photo,
+.contact-note,
+.contact-form,
+.story-card,
+.story-page-art {
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.storyteller-photo {
+  min-height: 420px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,0.84), rgba(236, 232, 225, 0.92));
+}
+
+.storyteller-copy p {
+  margin: 1rem 0 0;
+  color: var(--muted);
+}
+
+.category-grid,
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.story-card {
+  overflow: hidden;
+}
+
+.story-visual {
+  min-height: 220px;
+  border-bottom: 1px solid rgba(25, 25, 25, 0.08);
+}
+
+.story-card-body {
+  padding: 1.2rem;
+}
+
+.story-card-body h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.18;
+}
+
+.story-tag {
+  margin: 0 0 0.55rem;
+  color: var(--accent);
+  font-family: "Gaegu", cursive;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.floral-visual,
+.drink-visual,
+.fashion-visual,
+.story-page-art {
+  position: relative;
+}
+
+.floral-visual {
+  background: linear-gradient(135deg, #f0d7df, #d9e2f6);
+}
+
+.drink-visual {
+  background: linear-gradient(135deg, #f3dfb2, #d7ebdc);
+}
+
+.fashion-visual {
+  background: linear-gradient(135deg, #ead8c0, #ddd5f1);
+}
+
+.floral-visual::before,
+.drink-visual::before,
+.fashion-visual::before,
+.floral-visual::after,
+.drink-visual::after,
+.fashion-visual::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.floral-visual::before {
+  width: 160px;
+  height: 160px;
+  left: 12%;
+  top: 18%;
+}
+
+.floral-visual::after {
+  width: 95px;
+  height: 95px;
+  right: 14%;
+  bottom: 16%;
+}
+
+.drink-visual::before {
+  width: 90px;
+  height: 140px;
+  left: 18%;
+  top: 18%;
+  border-radius: 24px;
+}
+
+.drink-visual::after {
+  width: 120px;
+  height: 120px;
+  right: 10%;
+  bottom: 12%;
+}
+
+.fashion-visual::before {
+  width: 130px;
+  height: 150px;
+  left: 18%;
+  top: 18%;
+  border-radius: 28px;
+}
+
+.fashion-visual::after {
+  width: 130px;
+  height: 70px;
+  right: 12%;
+  bottom: 14%;
+}
+
+.visual-note {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  font-family: "Gaegu", cursive;
+  font-weight: 700;
+}
+
+.alt-visual {
+  filter: hue-rotate(18deg) saturate(0.95);
+}
+
+.story-page-art,
+.contact-side {
+  min-height: 320px;
+}
+
+.story-page-art {
+  background: linear-gradient(180deg, rgba(255,255,255,0.84), rgba(232, 227, 215, 0.92));
+  overflow: hidden;
+}
+
+.story-page-art::before,
+.story-page-art::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(25, 25, 25, 0.08);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 12px 24px rgba(33, 33, 44, 0.08);
+}
+
+.story-page-art::before {
+  width: 62%;
+  height: 55%;
+  top: 14%;
+  left: 10%;
+  transform: rotate(-4deg);
+}
+
+.story-page-art::after {
+  width: 38%;
+  height: 44%;
+  right: 10%;
+  bottom: 12%;
+  transform: rotate(5deg);
+}
+
+.story-page-art span {
+  position: absolute;
+  left: 14%;
+  bottom: 12%;
+  z-index: 1;
+  font-family: "Gaegu", cursive;
+  font-size: 1.8rem;
+  color: rgba(25, 25, 25, 0.66);
+}
+
+.contact-layout {
+  gap: 1.5rem;
+}
+
+.contact-note,
+.contact-form {
+  padding: 1.3rem;
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact-form label {
+  font-weight: 700;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.92rem 1rem;
+  border: 1px solid rgba(25, 25, 25, 0.18);
+  border-radius: 16px;
+  font: inherit;
+  background: rgba(255, 255, 255, 0.84);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid rgba(215, 59, 62, 0.2);
+  border-color: var(--accent);
+}
+
+.button-submit {
+  margin-top: 0.4rem;
+  cursor: pointer;
+}
+
+.form-note {
+  margin: 0;
+  font-size: 0.93rem;
+}
+
+.site-footer {
+  margin-top: 1.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(25, 25, 25, 0.12);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-footer p,
+.site-footer div {
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+@media (max-width: 920px) {
+  .hero,
+  .storyteller-layout,
+  .contact-layout,
+  .category-grid,
+  .stories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual,
+  .storyteller-photo,
+  .story-page-art,
+  .contact-side {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 680px) {
+  .page-shell {
+    width: min(100% - 1rem, 1100px);
+  }
+
+  .site-header,
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
+  }
+
+  .hero {
+    padding-top: 1rem;
+  }
+
+  .hero-copy h1 {
+    max-width: none;
+  }
+}

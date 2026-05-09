@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | When Story Met Design</title>
+  <meta name="description" content="Get in touch with When Story Met Design to share ideas, ask questions, or start a creative conversation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Archivo+Black&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="When Story Met Design home">
+        <span class="brand-kicker">When Story</span>
+        <span class="brand-title">Met Design</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="./index.html">Home</a>
+        <a href="./stories.html">Stories</a>
+        <a class="is-active" href="./contact.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero hero-contact-page">
+        <div class="hero-copy compact-copy">
+          <p class="eyebrow">Say hello</p>
+          <h1>Contact Us</h1>
+          <p class="hero-text">Please leave your contact details if you would like us to send you interesting stories.</p>
+        </div>
+        <div class="contact-side story-page-art" aria-hidden="true">
+          <span>leave a note</span>
+        </div>
+      </section>
+
+      <section class="section contact-layout">
+        <div class="contact-note">
+          <p class="eyebrow">Story requests</p>
+          <h2>Leave your contact</h2>
+          <p>Please leave your contact details if you would like us to send you interesting stories. You can also mention the kinds of themes you enjoy, and we can share something that fits your interest.</p>
+        </div>
+
+        <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+          <label for="message">What stories do you like?</label>
+          <textarea id="message" name="message" rows="6" placeholder="Tell us the types of stories, themes, or ideas you would love to receive." required></textarea>
+
+          <button class="button button-primary button-submit" type="submit">Send My Contact</button>
+          <p class="form-note">Replace <code>your-form-id</code> with your real Formspree form ID before publishing the contact form.</p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>When Story Met Design</p>
+      <div>
+        <a href="./index.html">Home</a>
+        <a href="./stories.html">Stories</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
